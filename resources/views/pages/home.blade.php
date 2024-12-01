@@ -1,88 +1,10 @@
 @extends('layouts.app')
 
-@section('title', '首頁')
+@section('title', '群鴻的服務')
 
 @section('custom-css')
 <style>
-    /* 讓內容左右延伸 */
-    .container {
-            max-width: 100%;
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-        .navbar {
-            width: 100%;
-            height: 110px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background: rgba(255, 255, 255, 0.3) !important;
-            /* Green background with 30% opacity */
-            /* 透明背景，0.5 代表50%的透明度 */
-            z-index: 10;
-            /* 確保 navbar 在 swiper 之上 */
-        }
-
-        .navbar-brand {
-            margin-left: auto;
-            margin-right: auto;
-            display: block;
-        }
-
-
-        .swiper-container {
-            width: 100%;
-            height: 80vh;
-            position: relative;
-            z-index: 1;
-            /* 背景圖片在 navbar 下方 */
-        }
-
-        .swiper-slide {
-            background-size: cover;
-            background-position: center;
-            height: 500px;
-        }
-
-        .main-container {
-            width: 60%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .footer {
-            background-color: #005050;
-            color: white;
-        }
-
-        .footer-container {
-            width: 60%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .contact-list {
-            list-style: none;
-            /* 移除點點 */
-            padding: 0;
-            /* 去除內部間距 */
-            margin: 0;
-            /* 去除外部間距 */
-        }
-
-        #fans-follow i,
-        #post-share i {
-            color: rgba(255, 255, 255, 1);
-            /* 按鈕顏色 */
-            transition: color 0.3s ease;
-        }
-
-        #fans-follow i:hover,
-        #post-share i:hover {
-            color: #007bff;
-            /* 滑鼠懸停時的顏色 */
-        }
+    
 </style>
 @endsection
 
