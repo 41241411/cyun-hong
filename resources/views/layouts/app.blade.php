@@ -153,18 +153,19 @@
             </div>
 
             <section class="my-5 main-container">
-                <h2 class="mt-5">群鴻的服務</h2>
+                @yield('content-title')
                 <hr class="mb-5">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <ul>
-                            <li><a class="nav-link" href="#">稅務記帳服務</a></li>
-                            <li><a class="nav-link" href="#">工商登記服務</a></li>
-                            <li><a class="nav-link" href="#">營利事業例行性稅務事項</a></li>
-                            <li><a class="nav-link" href="#">營利事業所得稅申報方式</a></li>
+                            <li>群鴻的服務</li>
+                            <li><a class="nav-link" href="{{ route('tax')}}">稅務記帳服務</a></li>
+                            <li><a class="nav-link" href="{{ route('commercial')}}">工商登記服務</a></li>
+                            <li><a class="nav-link" href="{{ route('tax')}}">營利事業例行性稅務事項</a></li>
+                            <li><a class="nav-link" href="{{ route('tax')}}">營利事業所得稅申報方式</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-9">
                         @yield('content')
                     </div>
             
@@ -183,14 +184,24 @@
     @yield('custom-js')
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            var swiper = new Swiper('.swiper-container', {
-                direction: 'vertical',
-                effect: 'fade',
-                loop: true,
-                autoplay: { delay: 3000, disableOnInteraction: false },
-                pagination: { el: '.swiper-pagination', clickable: true },
-            });
-        });
+    var swiper = new Swiper('.swiper-container', {
+        direction: 'vertical', // 垂直滑動
+        effect: 'fade', // 淡入淡出效果
+        loop: true, // 循環播放
+        autoplay: {
+            delay: 3000, // 每 3 秒切換
+            disableOnInteraction: false // 滑動後不停止自動播放
+        },
+        pagination: {
+            el: '.swiper-pagination', // 分頁導航
+            clickable: true, // 點擊可以切換
+        },
+        preventClicks: true, // 禁止點擊
+        preventClicksPropagation: true, // 禁止點擊傳播
+        hashNavigation: false, // 禁用 hash 導航，避免頁面跳轉
+    });
+});
+
     </script>
 </body>
 

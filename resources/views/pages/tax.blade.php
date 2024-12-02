@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '群鴻的服務')
+@section('title', '稅務記帳服務')
 
 @section('custom-css')
 <style>
@@ -9,7 +9,8 @@
 @endsection
 
 @section('content-title')
-<h2 class="mt-5">群鴻的服務</h2>
+{{ Breadcrumbs::render('tax') }}
+<h2 class="mt-5">稅務記帳服務</h2>
 @endsection
 
 @section('content')

@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\CommercialController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\TaxController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('pages.home');
-});
+})->name('home');
+
+Route::get('/tax', [TaxController::class, 'index'])->name('tax');
+
+Route::get('/commercial', [CommercialController::class,'index'])->name('commercial');
