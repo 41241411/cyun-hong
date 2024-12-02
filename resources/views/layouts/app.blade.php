@@ -39,7 +39,7 @@
 
         .swiper-container {
             width: 100%;
-            height: 80vh;
+            height: 85vh;
             position: relative;
             z-index: 1;
             /* 背景圖片在 navbar 下方 */
@@ -48,7 +48,7 @@
         .swiper-slide {
             background-size: cover;
             background-position: center;
-            height: 500px;
+            height: 100%;
         }
 
         .main-container {
@@ -114,6 +114,19 @@
             background-color: #007b9d;
             color: white;
         }
+
+        .hrset {
+            opacity: 0.5; /* 取消透明效果 */
+            height: 5px;
+            /* 控制線條厚度 */
+            background-color: #005050;
+            /* 設置背景顏色 */
+            border: none;
+            /* 移除邊框 */
+            margin-top: 0;
+            /* 移除上下的預設間距 */
+            margin-bottom: 40px;
+        }
     </style>
 </head>
 
@@ -124,7 +137,40 @@
 
         <!-- Main Content -->
         <main>
-            @yield('content')
+            <!-- Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"
+                        style="background-image: url('https://static.iyp.tw/40416/system/page-banner-19c33.jpg');">
+                    </div>
+                    <div class="swiper-slide"
+                        style="background-image: url('https://static.iyp.tw/40416/system/page-banner-8e47c.jpg');">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <hr class="hrset">
+
+            </div>
+
+            <section class="my-5 main-container">
+                <h2 class="mt-5">群鴻的服務</h2>
+                <hr class="mb-5">
+                <div class="row">
+                    <div class="col-md-4">
+                        <ul>
+                            <li><a class="nav-link" href="#">稅務記帳服務</a></li>
+                            <li><a class="nav-link" href="#">工商登記服務</a></li>
+                            <li><a class="nav-link" href="#">營利事業例行性稅務事項</a></li>
+                            <li><a class="nav-link" href="#">營利事業所得稅申報方式</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-8">
+                        @yield('content')
+                    </div>
+            
+                </div>
+            </section>
+            
         </main>
 
         <!-- Footer -->
@@ -135,6 +181,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     @yield('custom-js')
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var swiper = new Swiper('.swiper-container', {
+                direction: 'vertical',
+                effect: 'fade',
+                loop: true,
+                autoplay: { delay: 3000, disableOnInteraction: false },
+                pagination: { el: '.swiper-pagination', clickable: true },
+            });
+        });
+    </script>
 </body>
 
 </html>
